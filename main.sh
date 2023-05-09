@@ -30,4 +30,6 @@ else
     echo "data.db 还在，不需要重新下载数据库。"
 fi
 
+chmod +x apan
+
 ./apan server --no-prefix
