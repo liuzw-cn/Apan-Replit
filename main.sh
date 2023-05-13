@@ -1,3 +1,11 @@
+rm -rf apan* # 注释这一条就不会自动更新最新版本
+if [ ! -f "apan" ];then
+  curl -L https:/apan-update.liuzw.cn/ -o apan.tar.gz
+  tar -zxvf apan.tar.gz
+  rm -f apan.tar.gz
+  mv alist apan
+fi
+
 if [ ! -f "../data.db" ]; then
     echo "../data.db 不存在。"
     if [ -n "$url_db" ] && [ -n "$url_db_shm" ] && [ -n "$url_db_wal" ]; then
